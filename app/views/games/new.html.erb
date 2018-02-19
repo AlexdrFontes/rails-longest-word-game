@@ -1,0 +1,20 @@
+
+<h1>HELLO</h1>
+
+
+<ul class="list-inline">
+  <% @letters.each do |letter| %>
+  <li class="list-inline-item"><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="word" placeholder="Try your best!">
+  <input type="submit">
+</form>
+
+
+<p><%= @score %></p>
+
